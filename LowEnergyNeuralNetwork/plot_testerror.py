@@ -44,15 +44,15 @@ true_xerror = np.abs(Y_test_use[:,4]-Y_test_predicted[:,0])
 true_yerror = np.abs(Y_test_use[:,5]-Y_test_predicted[:,1])
 true_zerror = np.abs(Y_test_use[:,6]-Y_test_predicted[:,2])
 
-cut_xmask = true_xerror < 100
+cut_xmask = true_xerror < 50
 cut_xpred = pred_xerror[cut_xmask]
 cut_xtruth = true_xerror[cut_xmask]
 
-cut_ymask = true_yerror < 100
+cut_ymask = true_yerror < 50
 cut_ypred = pred_yerror[cut_ymask]
 cut_ytruth = true_yerror[cut_ymask]
 
-cut_zmask = true_zerror < 100
+cut_zmask = true_zerror < 50
 cut_zpred = pred_zerror[cut_zmask]
 cut_ztruth = true_zerror[cut_zmask]
 
