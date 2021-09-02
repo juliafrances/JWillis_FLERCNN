@@ -1,0 +1,1 @@
+singularity exec -B /mnt/home/willis51:/mnt/home/willis51 -B /mnt/research/IceCube:/mnt/research/IceCube --nv /mnt/research/IceCube/Software/icetray_stable-tensorflow.sif python CNN_TestTimeError.py -i /mnt/research/IceCube/jmicallef/official_oscnext/level6.5/140000/oscNext_genie_level6.5_v02.00_pass2.140000.00h_to_04h.cleanedpulses_transformed_IC19.no_cuts.test_only.hdf5 

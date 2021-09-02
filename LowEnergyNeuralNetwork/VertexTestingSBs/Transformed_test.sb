@@ -1,0 +1,13 @@
+#!/bin/bash --login
+
+########## SBATCH Lines for Resource Request ##########
+ 
+#SBATCH --time=23:59:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --gres=gpu:1                # number of different nodes - could be an exact number or a range of nodes (same as -N)
+#SBATCH --mem=100G            # memory required per allocated CPU (or core) - amount of memory (in bytes)
+
+########## Command Lines to Run ##########
+
+singularity exec -B /mnt/home/willis51:/mnt/home/willis51 -B /mnt/research/IceCube:/mnt/research/IceCube --nv /mnt/research/IceCube/Software/icetray_stable-tensorflow.sif python /mnt/home/willis51/LowEnergyNeuralNetwork/CNN_TestVertex.py -i "/oscNext_genie_level6.5_v02.00_pass2.140000.00h_to_04h.cleanedpulses_transformed_IC19.no_cuts.test_only.hdf5" -d "/mnt/research/IceCube/jmicallef/official_oscnext/level6.5/140000/" -o /mnt/home/willis51/LowEnergyNeuralNetwork/ -n /VertexTestTransformed -e 168 --variables 3 --first_variable energy --compare_reco
+
+
